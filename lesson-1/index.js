@@ -15,3 +15,16 @@ addBtn.addEventListener("click", () => {
 clearBtn.addEventListener("click", () => {
     taskList.innerHTML = "";
 })
+
+// Dom
+
+const lights = document.querySelectorAll('.light');
+let index = 0;
+
+document.getElementById('starBtn').addEventListener('click', () => {
+    setInterval(() => {
+        lights.forEach(light => light.classList.remove('active'));
+        lights[index].classList.add('active');
+        index = (index + 1) % 3;
+    }, 1000);
+});
